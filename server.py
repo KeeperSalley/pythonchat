@@ -4,7 +4,7 @@ from twisted.protocols.basic import LineOnlyReceiver
 
 
 class ServerProtocol(LineOnlyReceiver):
-    factory: 'Server'
+    factory: '95.181.163.28'
     login: str = None
 
     def connectionLost(self, reason=connectionDone):
