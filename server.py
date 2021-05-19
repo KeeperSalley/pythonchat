@@ -1,8 +1,7 @@
 from twisted.internet import reactor
 from twisted.internet.protocol import ServerFactory, connectionDone
 from twisted.protocols.basic import LineOnlyReceiver
-import playsound
-blocking = True
+
 
 
 class ServerProtocol(LineOnlyReceiver):
@@ -25,7 +24,7 @@ class ServerProtocol(LineOnlyReceiver):
 
             for user in self.factory.clients:
                 user.sendLine(content.encode())
-                playsound.playsound("pip.mp3", block=blocking)
+                
         else:
             # login:admin -> admin
             if content.startswith("login:"):
